@@ -38,5 +38,5 @@ it('should the carbon offset of a tree depending on the age of the tree', ()=>{
 })
 
 it('it should return the next month', ()=>{
-    assert.deepStrictEqual(getNextMonth('08-03-2023'),'3-09-2023')
+    assert.deepStrictEqual(getNextMonth('08-03-2023'),'2023-09-3')
 })

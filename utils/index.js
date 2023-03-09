@@ -54,7 +54,7 @@
     const month = ('0' + (nextMonth.getMonth() + 1)).slice(-2); // add leading zero if month is a single digit
     const year = nextMonth.getFullYear();
 
-    const formattedDate = `${currentDay}-${month}-${year}`;
+    const formattedDate = `${year}-${month}-${currentDay}`;
   
     // Return the next month as a string in the format "DD/MM/YYYY"
     return formattedDate
