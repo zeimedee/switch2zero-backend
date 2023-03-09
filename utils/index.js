@@ -110,10 +110,23 @@ const calculateInputs = (inputs) => {
 }
 
 
+const validateRequest = (req, res, next) => {
+    const xApiKey = req.headers['x-api-key']
+    if (xApiKey !== "myApiKey") {
+      const resp = {
+        data: 'Your request cannot be processed',
+        statusCode: 401
+      }
+     return res.send(resp)
+    }
+    return next()
+  }
+
  module.exports={
     calculateCarbonOffset,
     calculateInputs,
     convertTonnesToKilograms,
     treeCarbonOffset,
-    getNextMonth
+    getNextMonth,
+    validateRequest
  }

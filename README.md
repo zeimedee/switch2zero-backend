@@ -19,6 +19,13 @@ npm test
 it can be accessed at 
 ```
 http://localhost:4000/api/v1/simulate/
+
+```
+
+a request header has to be set for a request to be successfully made
+
+```
+x-api-key : "myApiKey"
 ```
 
 example of the request body
