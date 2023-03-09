@@ -10,6 +10,12 @@ first install the dependencies by running the following commands in the terminal
 and start the application using 
 - ``` npm start ```
 
+
+automated testing can be started with the command
+```
+npm test
+```
+
 it can be accessed at 
 ```
 http://localhost:4000/api/v1/simulate/

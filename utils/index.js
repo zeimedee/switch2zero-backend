@@ -1,19 +1,19 @@
 //function which returns how carbon a tree can offset given its age in kilograms
  const treeCarbonOffset = (ageOfTree) => {
 
-    if(ageOfTree = 1 ){
+    if(ageOfTree == 1 ){
         return 4.75
     }
-    if(ageOfTree = 2 ){
+    if(ageOfTree == 2 ){
         return 4.75*2
     }
-    if(ageOfTree = 3 ){
+    if(ageOfTree == 3 ){
         return 4.75*3
     }
-    if(ageOfTree = 4 ){
+    if(ageOfTree == 4 ){
         return 4.75*4
     }
-    if(ageOfTree = 5 ){
+    if(ageOfTree ==5 ){
         return 4.75*5
     }
     if(ageOfTree >= 6 ){
@@ -33,6 +33,7 @@
     const givenDate = new Date(date);
   
     // Get the month and year of the given date
+    let currentDay = givenDate.getDate()
     let currentMonth = givenDate.getMonth();
     let currentYear = givenDate.getFullYear();
   
@@ -47,9 +48,16 @@
   
     // Create a new Date object for the next month
     const nextMonth = new Date(currentYear, currentMonth);
+
+
+    const day = ('0' + nextMonth.getDate()).slice(-2); // add leading zero if day is a single digit
+    const month = ('0' + (nextMonth.getMonth() + 1)).slice(-2); // add leading zero if month is a single digit
+    const year = nextMonth.getFullYear();
+
+    const formattedDate = `${currentDay}-${month}-${year}`;
   
-    // Return the next month as a string in the format "MM/YYYY"
-    return nextMonth
+    // Return the next month as a string in the format "DD/MM/YYYY"
+    return formattedDate
 }
 
 //calculate cumulative expenditure
@@ -104,5 +112,8 @@ const calculateInputs = (inputs) => {
 
  module.exports={
     calculateCarbonOffset,
-    calculateInputs
+    calculateInputs,
+    convertTonnesToKilograms,
+    treeCarbonOffset,
+    getNextMonth
  }
